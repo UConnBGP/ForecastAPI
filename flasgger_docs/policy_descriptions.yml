@@ -1,0 +1,21 @@
+Returns the descritions of the specified policy.
+---
+parameters:
+  - name: policy
+    in: path
+    description: AS Number
+    type: string
+    enum: ['simpleTimeHeuristic', 'rov', 'deprefer', 'all']
+    required: true
+definitions:
+  Description:
+    type: object
+    properties:
+      fullName: string
+      short_desc: string
+      long_desc: string
+responses:
+  200:
+    description: a JSON object containing the descriptions of the requested policies
+    schema:
+      $ref: '#/definitions/Description'

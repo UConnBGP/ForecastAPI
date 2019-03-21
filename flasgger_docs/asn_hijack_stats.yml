@@ -10,7 +10,7 @@ parameters:
   - name: policy
     in: path
     type: string
-    enum: ['simpleTimeHeuristic', 'rov', 'all']
+    enum: ['simpleTimeHeuristic', 'rov', 'deprefer', 'all']
     required: true
     default: all
 definitions:
@@ -18,20 +18,27 @@ definitions:
     type: object
     properties:
       policy_name:
-        type: string
-        items:
+        type: object
+        properties:
           $ref: '#/definitions/Stats'
   Stats:
     type: object
     properties:
-      neitherBlockedNorHijacked:
-        type: int
-      hijackedAndBlocked:
-        type: int
-      notHijackedButBlocked:
-        type: int
-      hijackedButNotBlocked:
-        type: int
+      fullName:
+        type: string
+      desc:
+        type: string
+      stats:
+        type: object
+        properties:
+          neitherBlockedNorHijacked:
+            type: int
+          hijackedAndBlocked:
+            type: int
+          notHijackedButBlocked:
+            type: int
+          hijackedButNotBlocked:
+            type: int
 responses:
   200:
     description: An object with a list of policies and their corresponding stats
