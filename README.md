@@ -3,14 +3,33 @@ Forecast API
 
 TODO: Add usage documentation
 
-### Build Docker Container
+### Get Container Image
 
 ```
-docker build -t="forecastapi" .
+docker pull ireynaldo/forecastapi
 ```
 
 ### Run Docker Container
 
 ```
-docker run -p 5000:5000 -d forecastapi
+docker run -p 5000:5000 -d --name api ireynaldo/forecastapi
+```
+
+### Stop Container
+
+```
+docker stop api
+```
+
+### Remove Container
+
+```
+docker rm api
+```
+
+### Update Image
+
+```
+docker rmi ireynaldo/forecastapi
+docker pull ireynaldo/forecastapi
 ```
