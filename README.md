@@ -3,6 +3,10 @@ Forecast API
 
 TODO: Add usage documentation
 
+### Checkout Flasgger API Docs
+
+`http://localhost:5000/apidocs`
+
 ### Get Container Image
 
 ```
